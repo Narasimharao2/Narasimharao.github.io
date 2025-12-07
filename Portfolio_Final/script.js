@@ -155,3 +155,22 @@ window.addEventListener('scroll', () => {
 
 // Initialize
 console.log('Portfolio website loaded successfully!');
+
+// Hamburger Menu Toggle
+function toggleMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    
+    // Close menu when a link is clicked
+    const links = navLinks.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+        });
+    });
+}
+
